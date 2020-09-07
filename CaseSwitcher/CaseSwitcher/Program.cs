@@ -8,8 +8,6 @@ namespace CaseSwitcher
     {
         static void Main(string[] args)
         {
-
-
             Console.WriteLine("Please enter a word or sentence.");
             var userInput = Console.ReadLine();
 
