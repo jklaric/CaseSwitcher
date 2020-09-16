@@ -16,24 +16,23 @@ namespace CaseSwitcher
 
         static string CaseSwitch(string userInput)
         {
-            var switchedUserInput = new StringBuilder();
-            var i = 0;
+            var switchedUserInput = userInput;
+            var counter = 0;
 
             foreach (var character in userInput)
             {
                 if (char.IsLower(character))
                 {
-                    switchedUserInput.Append(char.ToUpper(character));
+                    switchedUserInput = switchedUserInput.Remove(counter, 1).Insert(counter, char.ToString(switchedUserInput[counter]).ToUpper());
                 }
                 else
                 {
-                    switchedUserInput.Append(char.ToLower(character));
+                   switchedUserInput = switchedUserInput.Remove(counter, 1).Insert(counter, char.ToString(switchedUserInput[counter]).ToLower());
                 }
-
-                i++;
+                counter++;
             }
 
-            return switchedUserInput.ToString();
+            return switchedUserInput;
         }
     }
 }
